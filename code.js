@@ -4,9 +4,9 @@ console.log("Hello World!");
 //getComputerChoice: 
     //getComputerChoice will randomly RETURN a string of "rock", "paper", or "scissors"
     //Random Number: Use Math.random to generate random number 1-3
-    //Variable string: Assign random number to rock/paper/scissors
+    //Variable string: Assign random number; 1 = rock, 2 = paper 3 = scissors
+    //Console will return string result
 
-//ComputerChoice
     function getComputerChoice() {
         let randomNumber = Math.floor(Math.random() * 3) + 1;
         if(randomNumber === 1) {return "Rock"}
@@ -14,8 +14,10 @@ console.log("Hello World!");
         else{return "Scissors"}
     }
     
-
-
+//getHumanChoice: 
+    //Prompt human to choose b/t Rock/Paper/Scissors
+    //Console will return human choice
+    
 
 
     
