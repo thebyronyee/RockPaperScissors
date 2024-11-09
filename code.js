@@ -6,12 +6,17 @@ console.log("Hello World!");
     //Random Number: Use Math.random to generate random number 1-3
     //Variable string: Assign random number to rock/paper/scissors
 
-//function getComputerChoice () {
-    function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min +1)) + min;
+//ComputerChoice
+    function getComputerChoice() {
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+        if(randomNumber === 1) {return "Rock"}
+        else if(randomNumber === 2) {return "Paper"}
+        else{return "Scissors"}
     }
-    let randomNumber = getRandomIntInclusive(1, 3);
-    console.log(randomNumber);
+    
+
+
+
+
+    
 
