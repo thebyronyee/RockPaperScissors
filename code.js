@@ -18,22 +18,21 @@ console.log("Hello World!");
     //Prompt human to choose b/t rock/paper/scissors
     //If typed selection is one of those 3 options, console will return human choice
     //If not, then prompt user to try again
-    
-    
     function getHumanChoice() {
-        let a = "rock"
-        let b = "paper"
-        let c = "scissors"
-        let selection = prompt("Please type one of the following letter options: 'a = rock', 'b = paper', or 'c = scissors'.")
-        //Problem: logic is not matching string. perhaps try  with a variable?
-        if(selection = "a") {
-            console.log("You chose " + selection)
-        }
-        else{
-            prompt("I'm sorry, I don't recognize that option. Please choose again from the following options by typing: 'rock', 'paper', or 'scissors'.")
+        let text;
+        let selection = prompt("Please type one of the following letter options: 'rock', 'paper', or 'scissors'.")
+        switch(selection) {
+        case  "rock":
+            console.log("You chose rock");
+            break;
+        case  "paper":
+            console.log("You chose paper");
+            break;
+        case  "scissors":
+            console.log("You chose scissors");
+            break;
+        default: 
+            console.log("I'm sorry, I don't recognize that option. Please choose again from the following options by typing: 'rock', 'paper', or 'scissors'.")
         }
     }
-
-
-    
 
