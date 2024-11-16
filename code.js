@@ -44,7 +44,7 @@ console.log("Hello World!");
             console.log("You chose scissors");
             break;
         default: 
-            console.log("I'm sorry, I don't recognize that option. Please try again.");
+            console.log("Sorry, I don't recognize that option. Please try again.");
         }
         //how can I loop this back to the original prompt?
     }
@@ -63,9 +63,42 @@ let computerScore = 0
         //If computer wins, add 1 pt to computer score
         //Display scoreCard at the end of each round
 function playRound(humanChoice, computerChoice) {
-    
-
+    if (humanChoice === 'rock', computerChoice === 'paper') {
+        return "Paper beats rock, computer scored 1 point."; 
+        //computer + 1
+        }
+    else if (humanChoice === 'rock', computerChoice === 'scissors') {
+        return "Rock beats scissors, you scored 1 point."
+        //human +1
+        }
+    else if (humanChoice === 'rock', computerChoice === 'rock') {
+        return "Tie, play another round."
+        }
+    else if (humanChoice === 'paper', computerChoice === 'scissors') {
+        return "Scissors beats paper, computer scores 1 point."
+        //computer + 1
+        }
+    else if (humanChoice === 'paper', computerChoice === 'rock') {
+        return "Paper beats rock, you scored 1 point."
+        //human + 1
+        }
+    else if (humanChoice === 'paper', computerChoice === 'paper') {
+        return "Tie, play another round"
+        }
+    else if (humanChoice === 'scissors', computerChoice === 'rock') {
+        return "Rock beats paper, computer scores 1 point."
+        //computer + 1
+        }
+    else if(humanChoice === 'scissors', computerChoice === 'paper') {
+        return "Scissors beats paper, you scored 1 point."
+        ///human + 1
+        }
+    else if (humanChoice === 'scissors', computerChoice === 'scissors') {
+        return "Tie, play another round."
+        }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//const humanSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
+//This is where I'm currently stuck. constant variables trigger the human/computer choice to run. May need to update functions to eliminate redundant humanChoice and computerChoice
+
