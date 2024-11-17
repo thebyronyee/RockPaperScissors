@@ -1,5 +1,5 @@
 //Testing if js file linked to html file - console log will display "Hello World!"
-console.log("Hello World!");
+console.log("JS file connection cconfirmed");
 
 //getComputerChoice: 
     //getComputerChoice will randomly RETURN a string of "rock", "paper", or "scissors"
@@ -13,17 +13,18 @@ console.log("Hello World!");
         let randomNumber = Math.floor(Math.random() * 3) + 1;
         if(randomNumber === 1) {
             computerChoice = "rock";
-            return "The computer chose rock"
+            //return "The computer chose rock"
             }
         else if(randomNumber === 2) {
             computerChoice = "paper";
-            return "The computer chose paper"
+            //return "The computer chose paper"
             }
         else{
             computerChoice = "scissors";
-            return "The computer chose scissors"
+            //return "The computer chose scissors"
             }
-    }
+        //console.log(computerChoice);
+        }
     
 //getHumanChoice: 
     //Prompt human to choose b/t rock/paper/scissors
@@ -31,21 +32,22 @@ console.log("Hello World!");
     //Make human response case-insensitive
     //If not, then prompt user to try again
     function getHumanChoice() {
-        let selection = prompt("Please type one of the following letter options: 'rock', 'paper', or 'scissors'.")
-        let humanChoice = selection.toLowerCase();
-        switch(humanChoice) {
-        case  "rock":
-            console.log("You chose rock");
-            break;
-        case  "paper":
-            console.log("You chose paper");
-            break;
-        case  "scissors":
-            console.log("You chose scissors");
-            break;
-        default: 
-            console.log("Sorry, I don't recognize that option. Please try again.");
-        }
+        let entry = prompt("Please type one of the following letter options: 'rock', 'paper', or 'scissors'.")
+        let humanChoice = entry.toLowerCase();
+        //switch(humanChoice) {
+        //case  "rock":
+           // console.log("You chose rock");
+            //break;
+        //case  "paper":
+            //console.log("You chose paper");
+            //break;
+        //case  "scissors":
+            //console.log("You chose scissors");
+            //break;
+        //default: 
+            //console.log("Sorry, I don't recognize that option. Please try again.");
+        //console.log(humanChoice);
+        //}
         //how can I loop this back to the original prompt?
     }
 
@@ -62,43 +64,56 @@ let computerScore = 0
         //If human wins, add 1pt to human score
         //If computer wins, add 1 pt to computer score
         //Display scoreCard at the end of each round
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === 'rock', computerChoice === 'paper') {
-        return "Paper beats rock, computer scored 1 point."; 
+function playRound(humanSelection, computerSelection) {
+    let selection;
+    let result;
+    if (humanSelection === 'rock' & computerSelection === 'paper') {
+        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
+        result = "Paper beats rock, computer scored 1 point."
         //computer + 1
+        alert(selection\n result\n "Your Score : " + humanScore\n "Computer Score: " + computerScore)
         }
-    else if (humanChoice === 'rock', computerChoice === 'scissors') {
-        return "Rock beats scissors, you scored 1 point."
+    else if (humanSelection === 'rock' && computerSelection === 'scissors') {
+        result = "Rock beats scissors, you scored 1 point."
+        alert(result\n "Your Score : " + humanScore\n "Computer Score: " + computerScore)
         //human +1
         }
-    else if (humanChoice === 'rock', computerChoice === 'rock') {
-        return "Tie, play another round."
+    else if (humanSelection === 'rock'&& computerSelection === 'rock') {
+        result = "Tie, play another round."
+        console.log(result)
         }
-    else if (humanChoice === 'paper', computerChoice === 'scissors') {
-        return "Scissors beats paper, computer scores 1 point."
+    else if (humanSelection === 'paper' && computerSelection === 'scissors') {
+        result = "Scissors beats paper, computer scored 1 point."
+        console.log(result)
         //computer + 1
         }
-    else if (humanChoice === 'paper', computerChoice === 'rock') {
-        return "Paper beats rock, you scored 1 point."
+    else if (humanSelection === 'paper' && computerSelection === 'rock') {
+        result = "Paper beats rock, you scored 1 point."
+        console.log(result)
         //human + 1
         }
-    else if (humanChoice === 'paper', computerChoice === 'paper') {
-        return "Tie, play another round"
+    else if (humanSelection === 'paper' && computerSelection === 'paper') {
+        result = "Tie, play another round"
+        console.log(result)
         }
-    else if (humanChoice === 'scissors', computerChoice === 'rock') {
-        return "Rock beats paper, computer scores 1 point."
+    else if (humanSelection === 'scissors' && computerSelection === 'rock') {
+        result = "Rock beats scissors, computer scored 1 point."
+        console.log(result)
         //computer + 1
         }
-    else if(humanChoice === 'scissors', computerChoice === 'paper') {
-        return "Scissors beats paper, you scored 1 point."
+    else if(humanSelection === 'scissors' && computerSelection === 'paper') {
+        result = "Scissors beats paper, you scored 1 point."
+        console.log(result)
         ///human + 1
         }
-    else if (humanChoice === 'scissors', computerChoice === 'scissors') {
-        return "Tie, play another round."
+    else if (humanSelection === 'scissors' && computerSelection === 'scissors') {
+        result = "Tie, play another round."
+        console.log(result)
         }
 }
 
-//const humanSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
-//This is where I'm currently stuck. constant variables trigger the human/computer choice to run. May need to update functions to eliminate redundant humanChoice and computerChoice
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
