@@ -1,5 +1,5 @@
 //Testing if js file linked to html file - console log will display "Hello World!"
-console.log("JS file connection cconfirmed");
+console.log("JS file connection confirmed");
 
 //getComputerChoice: 
     //getComputerChoice will randomly RETURN a string of "rock", "paper", or "scissors"
@@ -67,53 +67,66 @@ let computerScore = 0
 function playRound(humanSelection, computerSelection) {
     let selection;
     let result;
+    let scoreCard;
+
     if (humanSelection === 'rock' & computerSelection === 'paper') {
         selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
         result = "Paper beats rock, computer scored 1 point."
-        //computer + 1
-        alert(selection\n result\n "Your Score : " + humanScore\n "Computer Score: " + computerScore)
+        computerScore += 1
+        scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
+        alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    else if (humanSelection === 'rock' && computerSelection === 'scissors') {
+    if (humanSelection === 'rock' & computerSelection === 'scissors') {
+        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
         result = "Rock beats scissors, you scored 1 point."
-        alert(result\n "Your Score : " + humanScore\n "Computer Score: " + computerScore)
-        //human +1
+        humanScore += 1
+        scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
+        alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    else if (humanSelection === 'rock'&& computerSelection === 'rock') {
+    if (humanSelection === 'rock' & computerSelection === 'rock') {
         result = "Tie, play another round."
-        console.log(result)
+        alert(result)
         }
-    else if (humanSelection === 'paper' && computerSelection === 'scissors') {
+    if (humanSelection === 'paper' & computerSelection === 'scissors') {
+        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
         result = "Scissors beats paper, computer scored 1 point."
-        console.log(result)
-        //computer + 1
+        computerScore += 1
+        scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
+        alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    else if (humanSelection === 'paper' && computerSelection === 'rock') {
+    if (humanSelection === 'paper' & computerSelection === 'rock') {
+        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
         result = "Paper beats rock, you scored 1 point."
-        console.log(result)
-        //human + 1
+        humanScore += 1
+        scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
+        alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    else if (humanSelection === 'paper' && computerSelection === 'paper') {
+    if (humanSelection === 'paper' & computerSelection === 'paper') {
         result = "Tie, play another round"
-        console.log(result)
+        alert(result)
         }
-    else if (humanSelection === 'scissors' && computerSelection === 'rock') {
+    if (humanSelection === 'scissors' & computerSelection === 'rock') {
+        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
         result = "Rock beats scissors, computer scored 1 point."
-        console.log(result)
-        //computer + 1
+        computerScore += 1
+        scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
+        alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    else if(humanSelection === 'scissors' && computerSelection === 'paper') {
+    if(humanSelection === 'scissors' & computerSelection === 'paper') {
+        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
         result = "Scissors beats paper, you scored 1 point."
-        console.log(result)
-        ///human + 1
+        humanScore += 1
+        scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
+        alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    else if (humanSelection === 'scissors' && computerSelection === 'scissors') {
+    if (humanSelection === 'scissors' & computerSelection === 'scissors') {
         result = "Tie, play another round."
-        console.log(result)
+        alert(result)
         }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//const humanSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+//playRound(humanSelection, computerSelection);
 
