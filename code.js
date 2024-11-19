@@ -1,6 +1,13 @@
 //Testing if js file linked to html file - console log will display "Hello World!"
 console.log("JS file connection confirmed");
 
+let humanChoice;
+let computerChoice;
+let humanScore = 0;
+let computerScore = 0;
+let round = 1;
+
+
 //getComputerChoice: 
     //getComputerChoice will randomly RETURN a string of "rock", "paper", or "scissors"
     //Random Number: Use Math.random to generate random number 1-3
@@ -9,7 +16,6 @@ console.log("JS file connection confirmed");
     //Console will return string result "the computer chose..."
 
     function getComputerChoice() {
-        let computerChoice;
         let randomNumber = Math.floor(Math.random() * 3) + 1;
         if(randomNumber === 1) {
             computerChoice = "rock";
@@ -33,7 +39,7 @@ console.log("JS file connection confirmed");
     //If not, then prompt user to try again
     function getHumanChoice() {
         let entry = prompt("Please type one of the following letter options: 'rock', 'paper', or 'scissors'.")
-        let humanChoice = entry.toLowerCase();
+        humanChoice = entry.toLowerCase();
         //switch(humanChoice) {
         //case  "rock":
            // console.log("You chose rock");
@@ -56,77 +62,76 @@ console.log("JS file connection confirmed");
     //computerScore keeps track of computer points
     //Initialize variables with starting value of 0
    
-let humanScore = 0
-let computerScore = 0
+
 
  //playRound: function that has 2 parameters: humanChoice, computerChoice
         //Determine who wins each round: paper > rock, rock > scissors, scissors > paper; state winner of round "x beats y, human/computer scores 1 point!"
         //If human wins, add 1pt to human score
         //If computer wins, add 1 pt to computer score
         //Display scoreCard at the end of each round
-function playRound(humanSelection, computerSelection) {
+function playRound(humanChoice, computerChoice) {
     let selection;
     let result;
     let scoreCard;
 
-    if (humanSelection === 'rock' & computerSelection === 'paper') {
-        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
+    if (humanChoice === 'rock' & computerChoice === 'paper') {
+        selection = "You chose " + humanChoice + ". The computer chose " + computerChoice + "."
         result = "Paper beats rock, computer scored 1 point."
         computerScore += 1
         scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
         alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    if (humanSelection === 'rock' & computerSelection === 'scissors') {
-        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
+    if (humanChoice === 'rock' & computerChoice === 'scissors') {
+        selection = "You chose " + humanChoice + ". The computer chose " + computerChoice + "."
         result = "Rock beats scissors, you scored 1 point."
         humanScore += 1
         scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
         alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    if (humanSelection === 'rock' & computerSelection === 'rock') {
+    if (humanChoice === 'rock' & computerChoice === 'rock') {
         result = "Tie, play another round."
         alert(result)
         }
-    if (humanSelection === 'paper' & computerSelection === 'scissors') {
-        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
+    if (humanChoice === 'paper' & computerChoice === 'scissors') {
+        selection = "You chose " + humanChoice + ". The computer chose " + computerChoice + "."
         result = "Scissors beats paper, computer scored 1 point."
         computerScore += 1
         scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
         alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    if (humanSelection === 'paper' & computerSelection === 'rock') {
-        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
+    if (humanChoice === 'paper' & computerChoice === 'rock') {
+        selection = "You chose " + humanChoice + ". The computer chose " + computerChoice + "."
         result = "Paper beats rock, you scored 1 point."
         humanScore += 1
         scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
         alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    if (humanSelection === 'paper' & computerSelection === 'paper') {
+    if (humanChoice === 'paper' & computerChoice === 'paper') {
         result = "Tie, play another round"
         alert(result)
         }
-    if (humanSelection === 'scissors' & computerSelection === 'rock') {
-        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
+    if (humanChoice === 'scissors' & computerChoice === 'rock') {
+        selection = "You chose " + humanChoice + ". The computer chose " + computerChoice + "."
         result = "Rock beats scissors, computer scored 1 point."
         computerScore += 1
         scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
         alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    if(humanSelection === 'scissors' & computerSelection === 'paper') {
-        selection = "You chose " + humanSelection + ". The computer chose " + computerSelection + "."
+    if(humanChoice === 'scissors' & computerChoice === 'paper') {
+        selection = "You chose " + humanChoice + ". The computer chose " + computerChoice + "."
         result = "Scissors beats paper, you scored 1 point."
         humanScore += 1
         scoreCard = "Current Score: Human: " + humanScore + " , Computer: " + computerScore
         alert(selection + "\n" + result + "\n" + scoreCard)
         }
-    if (humanSelection === 'scissors' & computerSelection === 'scissors') {
+    if (humanChoice === 'scissors' & computerChoice === 'scissors') {
         result = "Tie, play another round."
         alert(result)
         }
 }
 
-//const humanSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-//playRound(humanSelection, computerSelection);
+playRound(humanChoice, computerChoice);
 
