@@ -33,7 +33,7 @@ let round = 0;
     //toLowerCase: Make human response case-insensitive
     //If entry is not valid, prompt user to try again
     function getHumanChoice() {
-        let entry = prompt("Please type one of the following letter options: 'rock', 'paper', or 'scissors'.")
+        let entry = prompt("Please type one of the following options: 'rock', 'paper', or 'scissors'.")
         humanChoice = entry.toLowerCase()
         if(humanChoice === "rock" ||
             humanChoice === "paper" ||
