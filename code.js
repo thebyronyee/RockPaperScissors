@@ -29,14 +29,28 @@ let round = 0;
         }
     
 //getHumanChoice: 
-    //Prompt human to choose b/t rock/paper/scissors
+    //Prompt human to enter rock/paper/scissors
     //toLowerCase: Make human response case-insensitive
-    //If not, then prompt user to try again
+    //If entry is not valid, prompt user to try again
     function getHumanChoice() {
         let entry = prompt("Please type one of the following letter options: 'rock', 'paper', or 'scissors'.")
-        humanChoice = entry.toLowerCase();
-        //alert ("Sorry, I don't recognize that option. Please try again.");
-        //how can I loop this back to the original prompt?
+        humanChoice = entry.toLowerCase()
+        if(humanChoice === "rock" ||
+            humanChoice === "paper" ||
+            humanChoice === "scissors"){
+                return humanChoice
+        }
+        else{alert("Invalid option. Please enter rock, paper, or scissors.")
+                getHumanChoice()
+        }
+        //else if(humanChoice != 'paper'){ 
+        //    alert("Sorry, I don't recognize your response. Please try again.")
+        //        getHumanChoice()
+        //}
+        //else if(humanChoice != 'scissors'){ 
+       //     alert("Sorry, I don't recognize your response. Please try again.")
+       //         getHumanChoice()
+        //}
     }
 
  //playRound: function that has 2 parameters: humanChoice, computerChoice
