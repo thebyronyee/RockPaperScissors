@@ -140,30 +140,36 @@ function playRound(humanChoice, computerChoice) {
     //IF: round = 1-4, re-run the playRound function.
     //IF: round = tie, re-run the playRound function; do NOT count as a new round
     //IF: round = 5; state final score and determine a winner. Resets scores and # rounds to play again.
-    function playGame(round) {
-        console.log("playGame Round End: " + round)
-        if(round < 5){ 
-            getHumanChoice()
-            getComputerChoice()
-            playRound(humanChoice, computerChoice)
+function playGame(round) {
+    console.log("playGame Round End: " + round)
+    if(round < 5){ 
+        getHumanChoice()
+        getComputerChoice()
+        playRound(humanChoice, computerChoice)
+    }
+    else{
+        if(humanScore > computerScore) {
+            alert("Congratulations, you won! Click OK to play again.")
+            gameReset()
         }
-        else{
-            if(humanScore > computerScore) {
-                alert("Congratulations, you won! Click OK to play again.")
-            }
-            else {
-                alert("Sorry, the computer won this time. Click OK to play again.")
-            }
-        //round = 0
-        //humanScore = 0
-        //computerScore = 0
-        //getHumanChoice()
-        //getComputerChoice()
-        //playRound(humanChoice, computerChoice)
+        else {
+            alert("Sorry, the computer won this time. Click OK to play again.")
+            gameReset()
         }
     }
+}
 
-//Initiates running the getHumanChoice and getComputerChoice functions
+//gameReset: Resets points and rounds to zero to start the game over again.
+function gameReset(){
+    round = 0
+    humanScore = 0
+    computerScore = 0
+    getHumanChoice()
+    getComputerChoice()
+    playRound(humanChoice, computerChoice)
+}
+
+//Initiates start of the game: Runs the getHumanChoice and getComputerChoice functions
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 playRound(humanChoice, computerChoice);
